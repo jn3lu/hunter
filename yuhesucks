@@ -1,0 +1,52 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>cs 115 template</title>
+</head>
+<body>
+
+
+
+<form id="function">
+输入你准备写的函数名字
+<p><input name="name" type="text">
+</form>
+
+<form id="parameter">
+输入你准备写的函数所需要的3个parameters(参数)名字
+<br>多个参数之间用空格隔开(就跟在DRacket里面一样)
+<p><input name="name" type="text">
+</form>
+
+<button onclick="doit()">
+走起
+</button>
+
+<script>
+
+
+function doit() {
+var x,y;
+
+var x=document.getElementById("function").elements["name"].value;
+var y=document.getElementById("parameter").elements["name"].value;
+var z=y.split(" ")
+var a=z[0]
+var b=z[1]
+var c=z[2]
+
+//.getElementById
+document.getElementById("okay").innerHTML=(";; ("+x+" "+a+" "+b+" "+c+") Produces .........."+"<br>"+";; "+x+": ... ... ... -> ..."+"<br>"+";; Requires:"+"<br>"+";;\xa0\xa0\xa0\xa0......"+"<br>"+";; Examples:"+"<br>"+"(check-expect ("+x+" ... ... ...) ...)"+"<br>"+"(check-expect ("+x+" ... ... ...) ...)"+"<br>"+"<br>"+"(define ("+x+" "+a+" "+b+" "+c+")"+"<br>"+"\xa0\xa0\xa0\xa0"+"...)"+"<br>"+"<br>"+";; Tests: "+"<br>"+"(check-expect ("+x+" ... ... ...) ...)"+"<br>"+"(check-expect ("+x+" ... ... ...) ...)"+"<br>"+"(check-expect ("+x+" ... ... ...) ...)"+"<br>"+"(check-expect ("+x+" ... ... ...) ...)");
+
+
+ }
+
+
+
+</script>
+
+
+<p id="okay"> </p>
+</body>
+</html>
